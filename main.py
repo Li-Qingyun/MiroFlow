@@ -11,6 +11,7 @@ import fire
 import hydra
 import utils.trace_single_task
 import utils.prepare_benchmark.main
+import utils.trace_multi_turn_chat
 from src.logging.logger import bootstrap_logger
 from config import config_name, config_path, debug_config
 from rich.traceback import install
@@ -34,6 +35,7 @@ if __name__ == "__main__":
         {
             "print-config": print_config,
             "trace": utils.trace_single_task.main,
+            "multi-turn-chat": utils.trace_multi_turn_chat.main,
             "common-benchmark": common_benchmark.main,
             "eval-answer": utils.eval_answer_from_log.main,
             "avg-score": utils.calculate_average_score.main,

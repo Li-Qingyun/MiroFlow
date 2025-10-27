@@ -11,7 +11,7 @@ LOGGER_LEVEL = os.getenv("LOGGER_LEVEL", "INFO")
 logger = bootstrap_logger(level=LOGGER_LEVEL)
 
 
-def process_input(task_description, task_file_name):
+def process_input(task_description, auxiliary_description, task_file_name):
     """
     Process user input, especially files.
     Returns formatted initial user message content list and updated task description.
@@ -59,6 +59,10 @@ def process_input(task_description, task_file_name):
         )
     # output format requiremnt
     # updated_task_description += "\nYou should follow the format instruction in the question strictly and wrap the final answer in \\boxed{}."
+
+    # Add appendix description
+    if auxiliary_description:
+        updated_task_description += f"\n{auxiliary_description}\n\n"
 
     # Add text content (may have been updated)
     initial_user_content.append({"type": "text", "text": updated_task_description})

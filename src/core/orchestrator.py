@@ -676,7 +676,7 @@ class Orchestrator:
         return final_answer_text
 
     async def run_main_agent(
-        self, task_description, task_file_name=None, task_id="default_task"
+        self, task_description, auxiliary_description=None, task_file_name=None, task_id="default_task"
     ):
         """
         Execute the main end-to-end task.
@@ -690,7 +690,7 @@ class Orchestrator:
 
         # 1. Process input
         initial_user_content, task_description = process_input(
-            task_description, task_file_name
+            task_description, auxiliary_description, task_file_name
         )
 
         task_guidence = """

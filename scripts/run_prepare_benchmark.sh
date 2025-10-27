@@ -24,3 +24,4 @@ uv run main.py prepare-benchmark get hle-text-only
 uv run main.py prepare-benchmark get xbench-ds
 uv run main.py prepare-benchmark get futurex
 uv run main.py prepare-benchmark get finsearchcomp
+uv run main.py prepare-benchmark get locomo

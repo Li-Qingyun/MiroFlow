@@ -32,6 +32,7 @@ async def execute_task_pipeline(
     log_path: pathlib.Path,
     ground_truth: str | None = None,
     metadata: dict | None = None,
+    auxiliary_description: str | None = None,
 ) -> tuple[str, str, pathlib.Path]:
     """
     Executes the full pipeline for a single task.
@@ -116,6 +117,7 @@ async def execute_task_pipeline(
             task_description=task_description,
             task_file_name=task_file_name,
             task_id=task_id,
+            auxiliary_description=auxiliary_description,
         )
 
         task_log.final_boxed_answer = final_boxed_answer
